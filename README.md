@@ -1,32 +1,32 @@
-# node-docker-microservice
+# Node.js Docker Microservice
 
 Learn Docker by building a Microservice!
 
-This is a companion project to my article on '[Learn Docker by building a Microservice](http://www.dwmkerr.com/learn-docker-by-building-a-microservice/)' demonstrating key concepts of Docker using a Node.js microservice as an example.
+This is a companion project to '[Learn Docker by building a Microservice](http://www.dwmkerr.com/learn-docker-by-building-a-microservice/)' demonstrating key concepts of Docker using a Node.js microservice as an example.
 
-# Pre-requisites
+# Prerequisites
 
-You must have Docker installed for this code to work! Check the [Installation Guide](https://docs.docker.com/engine/installation/) if you haven't got it installed.
+You must have Docker installed for this code to work! Check the [Installation Guide](https://docs.docker.com/engine/installation) if you haven't got it installed.
 
 # Coding
 
-To start or stop the test database, build the test-database image and run it:
+To start or stop the test database, build the users-database image and run it:
 
 ```bash
-cd ./database
-docker build -t database .
-docker run -it -p 3306:3306 database
+cd ./users-database
+docker build -t users-database .
+docker run -it -p 3306:3306 users-database
 ```
 
 Some commands for working with the test server:
 
 ```bash
 cd ./users-service
-npm install         # setup everything
-npm test 			# unit test - no need for a test database running
-npm start           # run the server - you must have a test database running
-npm run debug       # run the server in debug mode, opens a browser with the inspector
-npm run lint        # check to see if the code is beautiful
+npm install   # setup everything
+npm test      # unit test - no need for a test database running
+npm start     # run the server - you must have a test database running
+npm run debug # run the server in debug mode, opens a browser with the inspector
+npm run lint  # check to see if the code is beautiful
 ```
 
 You can also run the test server in its own container:
