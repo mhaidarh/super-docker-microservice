@@ -1,15 +1,16 @@
 version: '3.2'
 services:
   users-service:
-    build: ./users-service
     container_name: users_service
+    build: ./users-service
     ports:
      - "4000:4000"
     links:
-      - mysqldb:mysqldb
+      - users-database:users-database
     depends_on:
-     - mysqldb
+     - users-database
     environment:
-     - DATABASE_HOST=mysqldb
-  mysqldb:
+     - DATABASE_HOST=users-database
+  users-database:
+    container_name: users_database
     build: ./users-database

@@ -12,7 +12,7 @@ You must have Docker installed for this code to work! Check the [Installation Gu
 
 To start or stop the test database, build the users-database image and run it:
 
-```bash
+```sh
 cd ./users-database
 docker build -t users-database .
 docker run -it -p 3306:3306 users-database
@@ -20,7 +20,7 @@ docker run -it -p 3306:3306 users-database
 
 Some commands for working with the test server:
 
-```bash
+```sh
 cd ./users-service
 npm install   # setup everything
 npm test      # unit test - no need for a test database running
@@ -31,7 +31,7 @@ npm run lint  # check to see if the code is beautiful
 
 You can also run the test server in its own container:
 
-```bash
+```sh
 docker build -t users-service .
 docker run -it -p 4000:4000 --link mysqldb:mysqldb -e DATABASE_HOST=DB users-service
 ```
@@ -40,10 +40,15 @@ docker run -it -p 4000:4000 --link mysqldb:mysqldb -e DATABASE_HOST=DB users-ser
 
 To test the entire stack, run:
 
-```bash
+```sh
 docker-compose build
 docker-compose -d up
 sleep 10 # give the database server enough time to start!
 cd integration-test && npm start && cd ..
-docker-compose -d down
+```
+
+To reset:
+
+```sh
+docker-compose down
 ```
