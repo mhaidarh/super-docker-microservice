@@ -11,5 +11,5 @@ services:
      - mysqldb
     environment:
      - DATABASE_HOST=mysqldb
-  db:
-    build: ./database
+  mysqldb:
+    build: ./users-database
