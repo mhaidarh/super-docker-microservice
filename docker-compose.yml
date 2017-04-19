@@ -1,15 +1,15 @@
-version: '2'
+version: '1'
 services:
   users-service:
     build: ./users-service
     container_name: users_service
     ports:
-     - "8123:8123"
+     - "4000:4000"
     links:
-      - db:db
+      - mysqldb:mysqldb
     depends_on:
-     - db
+     - mysqldb
     environment:
-     - DATABASE_HOST=db
+     - DATABASE_HOST=mysqldb
   db:
-    build: ./test-database
+    build: ./database

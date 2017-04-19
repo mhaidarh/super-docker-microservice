@@ -1,5 +1,5 @@
-# Use Node v4 as the base image.
-FROM node:4
+# Use Node Alpine as the base image.
+FROM mhart/alpine-node
 
 # Add everything in the current directory to our image, in the 'app' folder.
 ADD . /app
@@ -9,7 +9,7 @@ RUN cd /app; \
     npm install --production
 
 # Expose our server port.
-EXPOSE 8123
+EXPOSE 4000
 
 # Run our app.
 CMD ["node", "/app/index.js"]

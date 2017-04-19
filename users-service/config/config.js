@@ -2,7 +2,7 @@
 //
 //  Simple application configuration. Extend as needed.
 module.exports = {
-  // host: process.env.HOST || 'localhost',
+  host: process.env.HOST || 'localhost',
   port: process.env.PORT || 4000,
   db: {
     host: process.env.DATABASE_HOST || '127.0.0.1',

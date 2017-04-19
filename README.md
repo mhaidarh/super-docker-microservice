@@ -13,9 +13,9 @@ You must have Docker installed for this code to work! Check the [Installation Gu
 To start or stop the test database, build the test-database image and run it:
 
 ```bash
-cd ./test-database
-docker build -t test-database .
-docker run -it -p 3306:3306 test-database
+cd ./database
+docker build -t database .
+docker run -it -p 3306:3306 database
 ```
 
 Some commands for working with the test server:
@@ -33,7 +33,7 @@ You can also run the test server in its own container:
 
 ```bash
 docker build -t users-service .
-docker run -it -p 8123:8123 --link db:db -e DATABASE_HOST=DB users-service
+docker run -it -p 4000:4000 --link mysqldb:mysqldb -e DATABASE_HOST=DB users-service
 ```
 
 # Integration Testing
