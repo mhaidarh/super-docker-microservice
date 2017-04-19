@@ -14,10 +14,10 @@ const supertest = require('supertest')
 const should = require('should')
 
 describe('users-service', () => {
-  const api = supertest('http://localhost:8123')
+  const api = supertest('http://localhost:4000')
 
   it('returns a 200 for a known user', (done) => {
-    api.get('/search?email=homer@thesimpsons.com')
+    api.get('/search?email=alpha@example.com')
       .expect(200, done)
   })
 })
